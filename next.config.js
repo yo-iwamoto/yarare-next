@@ -11,5 +11,6 @@ module.exports = {
   experimental: {
     typedRoutes: true,
     turbo: true,
+    serverActions: true,
   },
 };
