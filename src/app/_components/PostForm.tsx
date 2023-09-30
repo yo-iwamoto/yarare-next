@@ -16,15 +16,18 @@ export function PostForm() {
   const formRef = useRef<HTMLFormElement>(null);
 
   const action = (formData: FormData) => {
+    if (body === '') return;
+
     startTransition(() => {
       (async () => {
         const res = await postFormAction(formData);
         if (!res.success) {
-          toast({ title: res.message });
+          toast({ title: res.message, variant: 'destructive' });
           return;
         }
 
         setBody('');
+        toast({ title: 'Post created' });
         router.refresh();
       })();
     });

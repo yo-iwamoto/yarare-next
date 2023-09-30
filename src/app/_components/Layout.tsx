@@ -1,4 +1,5 @@
 import { SignOutButton } from './SignOutButton';
+import { Toaster } from '@/components/ui/toaster';
 import { cookies } from 'next/headers';
 import Link from 'next/link';
 import type { PropsWithChildren } from 'react';
@@ -18,6 +19,7 @@ export function Layout({ children }: PropsWithChildren) {
       <div className='min-h-[calc(100vh_-_80px)] bg-neutral-100'>
         {children}
       </div>
+      <Toaster />
     </>
   );
 }
